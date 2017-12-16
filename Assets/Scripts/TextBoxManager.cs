@@ -10,6 +10,8 @@ public class TextBoxManager : MonoBehaviour {
 	[HideInInspector]
 	public string[] textLines;
 	[HideInInspector]
+	public string speakerName;
+	[HideInInspector]
 	public int currentLine;
 	[HideInInspector]
 	public int endAtLine;
@@ -26,6 +28,7 @@ public class TextBoxManager : MonoBehaviour {
 	public GameObject nameBox;
 	[HideInInspector]
 	public Text nameText;
+	public GameObject portrait;
 
 	bool isNamed;
 
@@ -58,22 +61,14 @@ public class TextBoxManager : MonoBehaviour {
 	
 
 	void Start(){
-		player = FindObjectOfType<PlayerController>();	
-		theText = textBox.GetComponentInChildren<Text>();
-		nameText = nameBox.GetComponentInChildren<Text>();
-		// if(GetComponentInChildren<NPCController>())
-		// 	character = GetComponentInChildren<NPCController>();
+		GetComponents();
 
-		
 		if(isActive){
 			EnableTextBox();
 		}
 		else{
 			DisableTextBox();
 		}
-
-	
-
 	}
 
 	void Update(){
@@ -86,37 +81,59 @@ public class TextBoxManager : MonoBehaviour {
 
 	public void EnableTextBox(){
 		textBox.SetActive(true);
+		if(speakerName != ""){
+			OpenNameBox();
+		}
 		isActive = true;
 		if(stopPlayerMovement) 
 			player.canMove = false;
-		
-		
-//		openTextEvent();
+			
+		//openTextEvent();
 	}
 
 	public void DisableTextBox(){
 		textBox.SetActive(false);
 		if(nameBox.activeSelf)
 			CloseNameBox();
+		if(portrait.activeSelf)
+			ClosePortrait();
 		isActive = false;
 		player.canMove = true;
 		
-	//	closeTextEvent();
+		//closeTextEvent();
 	}
 
 	public void OpenNameBox(){
+		nameText.text = speakerName;
 		nameBox.SetActive(true);
 	}
 
 	public void CloseNameBox(){
+		nameText.text = "";		
 		nameBox.SetActive(false);
 	}
 
-	public void ReloadScript(TextAsset theText){
+	public void OpenPortrait(){
+		portrait.SetActive(true);
+	}
+
+	public void ClosePortrait(){
+		portrait.SetActive(false);
+	}
+
+	public void LoadScript(TextAsset theText){
 		if(theText != null){
 			textLines = new string[1];
 			textLines = (theText.text.Split('\n'));
+			
 		}
+	}
+
+	void GetComponents(){
+		player = FindObjectOfType<PlayerController>();	
+		theText = textBox.GetComponentInChildren<Text>();
+		nameText = nameBox.GetComponentInChildren<Text>();
+		portrait = GameObject.Find("Portrait");
 	}
 
 	void IterateThroughTextBox(){
@@ -124,11 +141,33 @@ public class TextBoxManager : MonoBehaviour {
 
 		if(Input.GetKeyDown(KeyCode.Return)){
 			currentLine++;
+			GetName(textLines);
+
 		}
 
 		if(currentLine > endAtLine){
 			DisableTextBox();
 			currentLine = 0;
+		}
+	}
+
+	public void GetName(string[] line){
+		if(line[currentLine].Contains("name[")){
+			Debug.Log("hasname");
+			int i = line[currentLine].IndexOf("[");
+			int j = line[currentLine].IndexOf("]", i);
+			string tempString = line[currentLine].Substring(i - 4, j - i + 1 + 4 + 1);
+			Debug.Log(tempString);
+			speakerName = line[currentLine].Substring(i + 1, j - i - 1);
+			nameText.text = speakerName;
+			Debug.Log(speakerName);
+			line[currentLine] = line[currentLine].Replace(tempString, "");
+			OpenNameBox();
+		}
+		else{
+			speakerName = "";
+			nameText.text = speakerName;
+			CloseNameBox();
 		}
 	}
 

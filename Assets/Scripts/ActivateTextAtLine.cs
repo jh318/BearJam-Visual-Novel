@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ActivateTextAtLine : MonoBehaviour {
 
@@ -15,6 +16,7 @@ public class ActivateTextAtLine : MonoBehaviour {
 	[HideInInspector]
 	public TextBoxManager theTextBox;
 	public TextAsset theText;
+	//public TextAsset theText2;
 
 	NPCController character;
 
@@ -29,6 +31,7 @@ public class ActivateTextAtLine : MonoBehaviour {
 	void Update(){
 		if(waitForPress && Input.GetKeyDown(KeyCode.J)){
 			StartText();
+			TextBoxManager.instance.GetName(TextBoxManager.instance.textLines);
 		}
 	}
 
@@ -50,14 +53,18 @@ public class ActivateTextAtLine : MonoBehaviour {
 	}
 
 	void StartText(){
-		theTextBox.ReloadScript(theText);
+		theTextBox.LoadScript(theText);
 		theTextBox.currentLine = startLine;
 		theTextBox.endAtLine = endLine;
 		theTextBox.EnableTextBox();
-		if(character != null){
-			TextBoxManager.instance.nameText.text = character.characterName;			
+		//if(character != null){
+			//TextBoxManager.instance.nameText.text = character.characterName;
+			if(character.characterPortrait != null){
+				TextBoxManager.instance.portrait.GetComponent<Image>().sprite = character.characterPortrait; 
+				TextBoxManager.instance.OpenPortrait();
+			}			
 			TextBoxManager.instance.OpenNameBox();
-		}
+		//}
 			
 
 		if(destroyWhenActivated){

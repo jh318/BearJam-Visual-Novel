@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class NPCController : MonoBehaviour {
 
 	public string characterName;
-	public Image characterPortrait;
+	public Sprite characterPortrait;
 
 	GameObject nameBox;
 

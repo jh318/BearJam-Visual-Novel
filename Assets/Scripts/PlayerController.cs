@@ -4,12 +4,25 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+	public static PlayerController instance;
+
 	public float speed = 2.0f;
 	public bool canMove;
+	public Sprite playerPortrait;
+	public bool isSpeaking;
+
+	public TextAsset playerText;
 
 	Rigidbody2D body;
 	Animator anim;
 	SpriteRenderer spriteRend;
+
+	void Awake(){
+		if(instance == null)
+			instance = this;
+		else
+			Destroy(gameObject);
+	}
 
 	void Start(){
 		body = GetComponent<Rigidbody2D>();

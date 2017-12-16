@@ -1,1 +1,9 @@
 //featurestuff
+
+//Set up profile Image for Player
+//Set up profile Image for NPC
+//Set up basic camera to follow player
+
+
+//import trees
+//set up phase triggers/booleans to set new text files

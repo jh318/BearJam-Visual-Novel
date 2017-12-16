@@ -1,3 +1,5 @@
-Out of my face punk
-Only you can prevent forest fires.
-It's the bear necessities...
+I don't even know my name
+name[Bob] Out of my face punk
+name[Joe] Only you can prevent forest fires.
+name[Steve] It's the bear necessities...
+I don't play by the rules of the game!

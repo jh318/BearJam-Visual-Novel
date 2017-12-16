@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: f2c132df976cd4a4fb536cea10a3511f
+timeCreated: 1513451827
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: KBBalloonAnimal
+  fontNames:
+  - KBBalloonAnimal
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
