@@ -21,9 +21,7 @@ public class NPCController : MonoBehaviour {
 	}
 
 	void Start(){
-		if(GetComponent<ActivateTextAtLine>()){
-			//stuff
-		}
+		
 	}
 
 	

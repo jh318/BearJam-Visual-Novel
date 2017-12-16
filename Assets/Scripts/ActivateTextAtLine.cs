@@ -16,7 +16,6 @@ public class ActivateTextAtLine : MonoBehaviour {
 	[HideInInspector]
 	public TextBoxManager theTextBox;
 	public TextAsset theText;
-	//public TextAsset theText2;
 
 	NPCController character;
 
@@ -29,10 +28,8 @@ public class ActivateTextAtLine : MonoBehaviour {
 	}
 
 	void Update(){
-		if(waitForPress && Input.GetKeyDown(KeyCode.J)){
+		if(waitForPress && Input.GetKeyDown(KeyCode.J))
 			StartText();
-			TextBoxManager.instance.GetName(TextBoxManager.instance.textLines);
-		}
 	}
 
 	
@@ -47,28 +44,23 @@ public class ActivateTextAtLine : MonoBehaviour {
 	}
 
 	void OnTriggerExit2D(Collider2D c){
-		if(c.GetComponent<PlayerController>()){
+		if(c.GetComponent<PlayerController>())
 			waitForPress = false;
-		}
 	}
 
 	void StartText(){
 		theTextBox.LoadScript(theText);
 		theTextBox.currentLine = startLine;
 		theTextBox.endAtLine = endLine;
+		TextBoxManager.instance.GetName(TextBoxManager.instance.textLines);	
 		theTextBox.EnableTextBox();
-		//if(character != null){
-			//TextBoxManager.instance.nameText.text = character.characterName;
-			if(character.characterPortrait != null){
-				TextBoxManager.instance.portrait.GetComponent<Image>().sprite = character.characterPortrait; 
-				TextBoxManager.instance.OpenPortrait();
-			}			
-			TextBoxManager.instance.OpenNameBox();
-		//}
-			
+	
+		if(character.characterPortrait != null){
+			TextBoxManager.instance.portrait.GetComponent<Image>().sprite = character.characterPortrait; 
+			TextBoxManager.instance.OpenPortrait();
+		}					
 
-		if(destroyWhenActivated){
-			Destroy(gameObject);
-		}
+		if(destroyWhenActivated)
+			Destroy(gameObject);	
 	}
 }

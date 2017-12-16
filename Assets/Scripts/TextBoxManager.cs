@@ -18,10 +18,9 @@ public class TextBoxManager : MonoBehaviour {
 	public bool isActive;
 	public bool stopPlayerMovement;
 
-
+	//public TextAsset textfile;
 	[HideInInspector]
 	public PlayerController player;
-	//public TextAsset textfile;
 	public GameObject textBox;
 	[HideInInspector]
 	public Text theText;
@@ -153,14 +152,11 @@ public class TextBoxManager : MonoBehaviour {
 
 	public void GetName(string[] line){
 		if(line[currentLine].Contains("name[")){
-			Debug.Log("hasname");
 			int i = line[currentLine].IndexOf("[");
 			int j = line[currentLine].IndexOf("]", i);
 			string tempString = line[currentLine].Substring(i - 4, j - i + 1 + 4 + 1);
-			Debug.Log(tempString);
 			speakerName = line[currentLine].Substring(i + 1, j - i - 1);
 			nameText.text = speakerName;
-			Debug.Log(speakerName);
 			line[currentLine] = line[currentLine].Replace(tempString, "");
 			OpenNameBox();
 		}
