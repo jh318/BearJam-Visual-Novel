@@ -5,32 +5,28 @@ using UnityEngine.UI;
 
 public class TextBoxManager : MonoBehaviour {
 
-	public GameObject textBox;
-
-	public Text theText;
-
-	public TextAsset textfile;
+	[HideInInspector]
 	public string[] textLines;
-
+	[HideInInspector]
 	public int currentLine;
+	[HideInInspector]
 	public int endAtLine;
-
-	public PlayerController player;
-
 	public bool isActive;
 	public bool stopPlayerMovement;
 
+	[HideInInspector]
+	public PlayerController player;
+	//public TextAsset textfile;
+	public Text theText;
+	public GameObject textBox;
+
+	
+
 	void Start(){
 		player = FindObjectOfType<PlayerController>();
-
-		if(textfile != null){
-			textLines = textfile.text.Split('\n');
-		}
-
-		if(endAtLine == 0){
-			endAtLine = textLines.Length - 1;
-		}
-
+		
+		//GetTextFile();
+		
 		if(isActive){
 			EnableTextBox();
 		}
@@ -40,27 +36,18 @@ public class TextBoxManager : MonoBehaviour {
 	}
 
 	void Update(){
-
 		if(!isActive){
 			return; 
 		}
 
-		theText.text = textLines[currentLine];
-
-		if(Input.GetKeyDown(KeyCode.Return)){
-			currentLine++;
-		}
-
-		if(currentLine > endAtLine){
-			DisableTextBox();
-			currentLine = 0;
-		}
+		IterateThroughTextBox();
 	}
 
 	public void EnableTextBox(){
 		textBox.SetActive(true);
 		isActive = true;
-		if(stopPlayerMovement) player.canMove = false;
+		if(stopPlayerMovement) 
+			player.canMove = false;
 		
 	}
 
@@ -77,5 +64,27 @@ public class TextBoxManager : MonoBehaviour {
 		}
 	}
 
+	void IterateThroughTextBox(){
+		theText.text = textLines[currentLine];
+
+		if(Input.GetKeyDown(KeyCode.Return)){
+			currentLine++;
+		}
+
+		if(currentLine > endAtLine){
+			DisableTextBox();
+			currentLine = 0;
+		}
+	}
+
+	// void GetTextFile(){
+	// 	if(textfile != null){
+	// 		textLines = textfile.text.Split('\n');
+	// 	}
+
+	// 	if(endAtLine == 0){
+	// 		endAtLine = textLines.Length - 1;
+	// 	}
+	// }
 
 }

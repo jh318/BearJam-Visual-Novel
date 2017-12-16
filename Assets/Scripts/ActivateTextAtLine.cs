@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class ActivateTextAtLine : MonoBehaviour {
 
-	public TextAsset theText;
 
 	public int startLine;
 	public int endLine;
-
-	public TextBoxManager theTextBox;
-
 	public bool requireButtonPress;
+	public bool destroyWhenActivated;
+
 	private bool waitForPress;
 
-	public bool destroyWhenActivated;
+	[HideInInspector]
+	public TextBoxManager theTextBox;
+	public TextAsset theText;
+
+
 
 	void Start(){
 		theTextBox = FindObjectOfType<TextBoxManager>();
