@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class TextBoxManager : MonoBehaviour {
 
+	public static TextBoxManager instance;
+
 	[HideInInspector]
 	public string[] textLines;
 	[HideInInspector]
@@ -14,18 +16,54 @@ public class TextBoxManager : MonoBehaviour {
 	public bool isActive;
 	public bool stopPlayerMovement;
 
+
 	[HideInInspector]
 	public PlayerController player;
 	//public TextAsset textfile;
-	public Text theText;
 	public GameObject textBox;
+	[HideInInspector]
+	public Text theText;
+	public GameObject nameBox;
+	[HideInInspector]
+	public Text nameText;
 
+	bool isNamed;
+
+	NPCController character;
+	
+	//Events
+	public delegate void OpenTextEvent();
+	public static event OpenTextEvent openTextEvent;
+	public delegate void CloseTextEvent();
+	public static event CloseTextEvent closeTextEvent;
+
+
+	void Awake(){
+		if(instance == null)
+			instance = this;
+		else
+			Destroy(gameObject);
+		
+	}
+
+	void OnEnable(){
+		//openTextEvent += OpenNameBox();
+		//closeTextEvent += CloseNameBox();
+
+	}
+
+	void OnDisable(){
+
+	}
 	
 
 	void Start(){
-		player = FindObjectOfType<PlayerController>();
-		
-		//GetTextFile();
+		player = FindObjectOfType<PlayerController>();	
+		theText = textBox.GetComponentInChildren<Text>();
+		nameText = nameBox.GetComponentInChildren<Text>();
+		// if(GetComponentInChildren<NPCController>())
+		// 	character = GetComponentInChildren<NPCController>();
+
 		
 		if(isActive){
 			EnableTextBox();
@@ -33,6 +71,9 @@ public class TextBoxManager : MonoBehaviour {
 		else{
 			DisableTextBox();
 		}
+
+	
+
 	}
 
 	void Update(){
@@ -49,12 +90,26 @@ public class TextBoxManager : MonoBehaviour {
 		if(stopPlayerMovement) 
 			player.canMove = false;
 		
+		
+//		openTextEvent();
 	}
 
 	public void DisableTextBox(){
 		textBox.SetActive(false);
+		if(nameBox.activeSelf)
+			CloseNameBox();
 		isActive = false;
 		player.canMove = true;
+		
+	//	closeTextEvent();
+	}
+
+	public void OpenNameBox(){
+		nameBox.SetActive(true);
+	}
+
+	public void CloseNameBox(){
+		nameBox.SetActive(false);
 	}
 
 	public void ReloadScript(TextAsset theText){

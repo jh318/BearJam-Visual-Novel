@@ -16,11 +16,14 @@ public class ActivateTextAtLine : MonoBehaviour {
 	public TextBoxManager theTextBox;
 	public TextAsset theText;
 
-
+	NPCController character;
 
 	void Start(){
 		theTextBox = FindObjectOfType<TextBoxManager>();
-
+		if(GetComponent<NPCController>())
+			character = GetComponent<NPCController>();
+		else if(GetComponentInChildren<NPCController>())
+			character = GetComponentInChildren<NPCController>();
 	}
 
 	void Update(){
@@ -51,6 +54,11 @@ public class ActivateTextAtLine : MonoBehaviour {
 		theTextBox.currentLine = startLine;
 		theTextBox.endAtLine = endLine;
 		theTextBox.EnableTextBox();
+		if(character != null){
+			TextBoxManager.instance.nameText.text = character.characterName;			
+			TextBoxManager.instance.OpenNameBox();
+		}
+			
 
 		if(destroyWhenActivated){
 			Destroy(gameObject);
