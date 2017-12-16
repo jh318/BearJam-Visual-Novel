@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
 	public float speed = 2.0f;
-
+	public bool canMove;
 
 	Rigidbody2D body;
 
@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void Update(){
+		if(!canMove) return;
 		GetPlayerInput();
 	}
 
