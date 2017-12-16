@@ -28,6 +28,7 @@ public class TextBoxManager : MonoBehaviour {
 	[HideInInspector]
 	public Text nameText;
 	public GameObject portrait;
+	public GameObject portrait2;
 
 	bool isNamed;
 
@@ -82,7 +83,7 @@ public class TextBoxManager : MonoBehaviour {
 		textBox.SetActive(true);
 		if(speakerName != ""){
 			OpenNameBox();
-		}
+		}		
 		isActive = true;
 		if(stopPlayerMovement) 
 			player.canMove = false;
@@ -94,8 +95,9 @@ public class TextBoxManager : MonoBehaviour {
 		textBox.SetActive(false);
 		if(nameBox.activeSelf)
 			CloseNameBox();
-		if(portrait.activeSelf)
+		if(portrait.activeSelf || portrait2.activeSelf)
 			ClosePortrait();
+			
 		isActive = false;
 		player.canMove = true;
 		
@@ -105,6 +107,8 @@ public class TextBoxManager : MonoBehaviour {
 	public void OpenNameBox(){
 		nameText.text = speakerName;
 		nameBox.SetActive(true);
+		if(portrait2.GetComponent<Image>().sprite != null)
+			portrait2.SetActive(true);
 	}
 
 	public void CloseNameBox(){
@@ -114,10 +118,13 @@ public class TextBoxManager : MonoBehaviour {
 
 	public void OpenPortrait(){
 		portrait.SetActive(true);
+		if(portrait2 != null)
+			portrait2.SetActive(true);
 	}
 
 	public void ClosePortrait(){
 		portrait.SetActive(false);
+		portrait2.SetActive(false);
 	}
 
 	public void LoadScript(TextAsset theText){
@@ -133,6 +140,7 @@ public class TextBoxManager : MonoBehaviour {
 		theText = textBox.GetComponentInChildren<Text>();
 		nameText = nameBox.GetComponentInChildren<Text>();
 		portrait = GameObject.Find("Portrait");
+		portrait2 = GameObject.Find("Portrait2");
 	}
 
 	void IterateThroughTextBox(){
