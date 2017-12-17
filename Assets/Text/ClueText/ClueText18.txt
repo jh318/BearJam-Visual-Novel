@@ -1,0 +1,6 @@
+(There is an letter on the ground)
+name[Officer Baron] "...That's the last straw! You're out!"
+name[Officer Baron] "...I'll finish the job myself!"
+name[Officer Baron] "How incompetent do you have to be to..."
+name[Officer Baron] "mess it up!"
+name[Officer Baron] Hmmm...

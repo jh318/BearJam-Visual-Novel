@@ -1,3 +1,3 @@
-(There is a bag of garbage next to the river)
+(There is a bag of very smelly garbage next to the river)
 name[Officer Baron] Is this suppose to go in the river...
 name[Officer Baron] or did it come from the river?

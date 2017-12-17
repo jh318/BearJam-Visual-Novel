@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour {
 			endGameText.SetActive(true);
 		}
 		else{
-			endGameText.GetComponent<Text>().text = "You are wrong!";
+			endGameText.GetComponent<Text>().text = "Wrong! Game Over!";
 			endGameText.SetActive(true);
 		}
 
