@@ -1,0 +1,2 @@
+name[Officer Baron] Tell me where he is!
+name[Salmon] I ain't talkin' to no bear!

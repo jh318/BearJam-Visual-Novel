@@ -1,0 +1,7 @@
+name[Officer Baron] Excuse me Mr. Bunny, I...
+name[Bunny] Who ya callin' Bunny mista! 
+name[Rabbit] I'mma Wabbit! Get it wight! I ain't no cutesy bunny! Getouttahere!
+name[Officer Baron] Sorry, sir. But please, I need to find the a polluter.
+name[Rabbit] You think *I* pollute?! You kiddin' me?! Get out of my face!
+
+

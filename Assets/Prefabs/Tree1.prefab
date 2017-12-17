@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4822718893250954}
   - component: {fileID: 212022557083994408}
-  - component: {fileID: 61140523209684246}
+  - component: {fileID: 58592875219155968}
   m_Layer: 0
   m_Name: TreeBot
   m_TagString: Untagged
@@ -71,8 +71,8 @@ Transform:
   m_Father: {fileID: 4170166242534986}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61140523209684246
-BoxCollider2D:
+--- !u!58 &58592875219155968
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -83,19 +83,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0056284964, y: -0.46904004}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: -0.4}
   serializedVersion: 2
-  m_Size: {x: 0.3283347, y: 0.27205014}
-  m_EdgeRadius: 0
+  m_Radius: 0.19
 --- !u!212 &212022557083994408
 SpriteRenderer:
   m_ObjectHideFlags: 1
