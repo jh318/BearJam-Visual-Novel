@@ -8020,7 +8020,7 @@ Prefab:
     - target: {fileID: 114509852447582162, guid: 5dce241dfad44cd4a8c9f6dfd45af5b1,
         type: 2}
       propertyPath: speed
-      value: 15
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4124142988326490, guid: 5dce241dfad44cd4a8c9f6dfd45af5b1, type: 2}
       propertyPath: m_LocalPosition.z
