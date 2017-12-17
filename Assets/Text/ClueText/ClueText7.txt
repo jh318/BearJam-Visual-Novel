@@ -1,0 +1,4 @@
+(There is a very large bag of... salt?)
+name[Officer Baron] I heard my cousin found something like this up in Kentucky.
+name[Officer Baron] I wonder how he's doing...
+name[Officer Baron] But that's a case for another day!

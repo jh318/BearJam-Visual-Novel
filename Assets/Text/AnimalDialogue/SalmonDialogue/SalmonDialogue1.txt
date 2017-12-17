@@ -1,5 +1,5 @@
 name[Officer Baron] Did you leave a campfire unattended?
 name[Salmon] I ain't talkin' to no bear!
 name[Officer Baron] Sir please, this is a very important park concern. Unattended campfires are potentially very dangerous.
-name[Salmon] Fool I live in water! What the heck makes you think I'm the irresponsible kind to be leaving campfires unattended!
+name[Salmon] Fool I live in water! What the heck makes you think I'm the irresponsible kind to be leaving fires unattended!
 name[Salmon] ...oh I get it! You trying to get me! Stinkin' bears! Go away!

@@ -1,2 +1,7 @@
-name[Skunk] Whatchu lookin' at?
-name[Officer Baron] (Oh god he smells so bad...)
+name[Skunk] Can I help you?
+name[Officer Baron] Um, *cough* yes, uh *cough* I... ugh!
+name[Skunk] Is something wrong, officer?
+name[Officer Baron] No, uh *cough* uhm *blegh* nothing's wrong!
+name[Skunk] Oh I see, well, I'll let you get back to your duty then.
+name[Officer Baron] No! I mean *cough* errggghh!
+(It is too troublesome to speak to the skunk)
