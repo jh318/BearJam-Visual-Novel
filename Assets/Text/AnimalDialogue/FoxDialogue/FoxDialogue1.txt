@@ -1,6 +1,8 @@
-name[Fox] Yip Yip!
+name[Fox] Jeez, that jerk...
 name[Officer Baron] Excuse me, what? 
-name[Fox] I called you a yip! Ya yip!
-name[Officer Baron] The rabbit said you knew something about an animal polluting the park?
-name[Fox] Everyone thinks they know what the fox said! But I didn't say nothin'!
-name[Fox] I ain't not snitch like that bird!
+name[Fox] Oh officer! H-How can I help?
+name[Officer Baron] There is an unattended campfire north of here.
+name[Officer Baron] Do you know who left it?
+name[Fox] Probably that rabbit. He's so mean!
+name[Fox] Definitely him! Yup! He's probably near it still!
+name[Officer Baron] Hmmm...

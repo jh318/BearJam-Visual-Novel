@@ -1,0 +1,13 @@
+name[Turtle] Well, hellooooooooooo there bear!
+name[Turtle] Oh myyyy, are you the officer of this forest?!
+name[Officer Bear] I... haven't seen you around here before...
+name[Officer Bear] Do you know about the rules of our park?
+name[Turtle] Rules? I do not! I just go with the flow, y'know?
+name[Turtle] Please tell me about these rules, officer.
+name[Officer Bear] First of all, we do not leave campfires unattended.
+name[Officer Bear] It's very irresponsible. Did you camp recently.
+name[Turtle] Why yes I did, just the other night! But um...
+name[Turtle] I don't remember if I had a fire or not?
+name[Officer Bear] How do you not remember that?!
+name[Turtle] I'm soooooooo sorry officer. I'm not sure I can help
+name[Turtle] with you're investigation.

@@ -1,0 +1,8 @@
+name[Deer] ohmygosh... ohmygosh... ohymygosh...
+name[Officer Baron] Deer!
+name[Deer] AAAAAAAAAAAHHHHHHHHHHHH!!!
+name[Officer Baron] Aaaaaaaaaaaaaaaah!!!!
+name[Deer] AAAAAAAHHHDONTEATME!!!
+name[Officer Baron] DID YOU LEAVE A CAMP FIRE UNATTENDED>
+name[Deer] NOOOOO! I... I... AAAAAAAAAHHH!
+(Deer is too spooked to properly investigate)

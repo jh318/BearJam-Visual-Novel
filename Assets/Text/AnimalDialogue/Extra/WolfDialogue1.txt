@@ -1,0 +1,11 @@
+name[Wolf] Oh jee... why do they always run away...
+name[Officer Baron] Wolf! What's going on here?
+name[Wolf] Aaah! Oh! Hey officer! I was just... um...
+name[Officer Baron] A campfire was left unattended.
+name[Officer Baron] Do you know anything about it?
+name[Wolf] Oh... um! uh... I was just...
+name[Officer Baron] Is that your tent?
+name[Wolf] Oh, uh... yeah! This is definitely my tent!
+name[Officer Baron] You aren't lying, are you wolf?
+name[Wolf] What? I don't lie!
+name[Officer Baron] Good! Now then, I have an investigation to continue.

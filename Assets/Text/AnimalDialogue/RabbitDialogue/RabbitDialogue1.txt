@@ -1,7 +1,12 @@
 name[Officer Baron] Excuse me Mr. Bunny, I...
 name[Bunny] Who ya callin' Bunny mista! 
 name[Rabbit] I'mma Wabbit! Get it wight! I ain't no cutesy bunny! Getouttahere!
-name[Officer Baron] Sorry, sir. But please, I need to find the a polluter.
-name[Rabbit] You think *I* pollute?! You kiddin' me?! Get out of my face!
+name[Officer Baron] Sorry, sir. But please, I need to find the animal that
+name[Officer Baron] that left that campfire over yonder unattended!
+name[Rabbit] You thinkin' *I* did it, aren't ya?! You kiddin' me?! Fuggetaboutit!
+name[Rabbit] I'll sue ya whole den if ya don't get out of my face wight now bear!
+name[Officer Baron] I...
+(The rabbit continues to verbally harass Officer Baron)
+(It is no longer possible to productively speak with the rabbit)
 
 

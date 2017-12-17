@@ -1,0 +1,7 @@
+name[Frog] Well... hey there bear!
+name[Officer Baron] Good day frog. Do you know about an unattended campfire?
+name[Frog] Me? Why no! I'm not very fond of fires!
+name[Officer Baron] Did you see anyone leave a campfire unattended?
+name[Frog] Hmm... why, I did hear some screaming coming from nearby.
+name[Frog] Maybe someone was spooked away?
+name[Officer Baron] Hmmm... thanks for the information, Frog.
