@@ -32,6 +32,10 @@ public class TextBoxManager : MonoBehaviour {
 	public GameObject portrait2;
 
 	bool isNamed;
+	bool isTyping = false;
+	bool cancelTyping = false;
+
+	public float typeSpeed;
 
 	NPCController character;
 	
@@ -89,6 +93,8 @@ public class TextBoxManager : MonoBehaviour {
 		isActive = true;
 		if(stopPlayerMovement) 
 			player.canMove = false;
+
+		StartCoroutine("TextScroll", textLines[currentLine]);
 			
 		//openTextEvent();
 	}
@@ -148,19 +154,42 @@ public class TextBoxManager : MonoBehaviour {
 	}
 
 	void IterateThroughTextBox(){
-		theText.text = textLines[currentLine];
-
+		//theText.text = textLines[currentLine];
 		if(Input.GetKeyDown(KeyCode.Return)){
-			currentLine++;
-			if(currentLine <= endAtLine)
-				GetName(textLines);
+			if(!isTyping){	
+				currentLine++;
 
-		}
+				if(currentLine <= endAtLine)
+					GetName(textLines);
 
-		if(currentLine > endAtLine){
-			DisableTextBox();
-			currentLine = 0;
+				if(currentLine > endAtLine){
+					DisableTextBox();
+					currentLine = 0;
+				}
+				else{
+					StartCoroutine("TextScroll", textLines[currentLine]);
+				}
+			}
+			else if(isTyping && !cancelTyping){
+				cancelTyping = true;
+			}
 		}
+	}
+
+	public IEnumerator TextScroll(string lineOfText){
+		int letter = 0;
+		theText.text = "";
+		isTyping = true;
+		cancelTyping = false;
+		//GetName(textLines);
+		while(isTyping && !cancelTyping && (letter < lineOfText.Length - 1)){
+			theText.text += lineOfText[letter];
+			letter++;
+			yield return new WaitForSeconds(typeSpeed);
+		}
+		theText.text = lineOfText;
+		isTyping = false;
+		cancelTyping = false;
 	}
 
 	public void GetName(string[] line){
