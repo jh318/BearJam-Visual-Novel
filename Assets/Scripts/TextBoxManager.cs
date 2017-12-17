@@ -27,6 +27,7 @@ public class TextBoxManager : MonoBehaviour {
 	public GameObject nameBox;
 	[HideInInspector]
 	public Text nameText;
+	public GameObject dialogueBG;
 	public GameObject portrait;
 	public GameObject portrait2;
 
@@ -80,6 +81,7 @@ public class TextBoxManager : MonoBehaviour {
 	}
 
 	public void EnableTextBox(){
+		dialogueBG.SetActive(true);
 		textBox.SetActive(true);
 		if(speakerName != ""){
 			OpenNameBox();
@@ -92,6 +94,7 @@ public class TextBoxManager : MonoBehaviour {
 	}
 
 	public void DisableTextBox(){
+		dialogueBG.SetActive(false);		
 		textBox.SetActive(false);
 		if(nameBox.activeSelf)
 			CloseNameBox();
@@ -141,6 +144,7 @@ public class TextBoxManager : MonoBehaviour {
 		nameText = nameBox.GetComponentInChildren<Text>();
 		portrait = GameObject.Find("Portrait");
 		portrait2 = GameObject.Find("Portrait2");
+		dialogueBG = GameObject.Find("DialogueBackground");
 	}
 
 	void IterateThroughTextBox(){
@@ -148,7 +152,8 @@ public class TextBoxManager : MonoBehaviour {
 
 		if(Input.GetKeyDown(KeyCode.Return)){
 			currentLine++;
-			GetName(textLines);
+			if(currentLine <= endAtLine)
+				GetName(textLines);
 
 		}
 
