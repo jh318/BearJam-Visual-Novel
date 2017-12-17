@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour {
 		anim.SetFloat("lastVertical", anim.GetFloat("vertical"));
 	}
 
-	void StopPlayerMovement(){
+	public void StopPlayerMovement(){
 		body.velocity = Vector3.zero;
 		anim.SetFloat("vertical", 0.0f);
 		anim.SetFloat("horizontal", 0.0f);
