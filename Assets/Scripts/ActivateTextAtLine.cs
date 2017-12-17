@@ -17,6 +17,7 @@ public class ActivateTextAtLine : MonoBehaviour {
 	public TextBoxManager theTextBox;
 	public TextAsset theText;
 
+	bool viewingText = false;
 	NPCController character;
 
 	void Start(){
@@ -28,8 +29,9 @@ public class ActivateTextAtLine : MonoBehaviour {
 	}
 
 	void Update(){
-		if(waitForPress && Input.GetKeyDown(KeyCode.J))
+		if(waitForPress && Input.GetKeyDown(KeyCode.Space) && !TextBoxManager.instance.isActive){
 			StartText();
+		}
 	}
 
 	

@@ -19,6 +19,8 @@ public class TextBoxManager : MonoBehaviour {
 	public bool stopPlayerMovement;
 	public float typeSpeed;
 	public string textScrollSFX;
+	public bool viewingText = false;
+
 	//public TextAsset textfile;
 	[HideInInspector]
 	public PlayerController player;
@@ -35,6 +37,7 @@ public class TextBoxManager : MonoBehaviour {
 	bool isNamed;
 	bool isTyping = false;
 	bool cancelTyping = false;
+
 
 
 	NPCController character;

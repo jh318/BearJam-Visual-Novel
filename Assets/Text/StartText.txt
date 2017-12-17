@@ -1,0 +1,6 @@
+name[Officer Baron] Somebody left this campfire unattended... (Press Enter to advance text)
+name[Officer Baron] That's downright irresponsible.
+name[Officer Baron] I better ask around and find out who did this. (Press Space to investigate clues and critters)
+name[Officer Baron] No animal can escape this law-abiding bear's justice!
+(When you think you know who did it, press cntrl and enter their name)
+(Can you get it right with one guess?)

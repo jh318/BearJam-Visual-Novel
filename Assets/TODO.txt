@@ -1,7 +1,10 @@
 //featurestuff
 
-//typewriter text
-//GameStates
+//Make Enter the interact key   
+//Create evidence prop for hints
+//Make a default input to make character read all lines
 //Write story
+
+TODOLATER
+//GameStates
 //set up phase triggers/booleans to set new text files
-//Level design with props

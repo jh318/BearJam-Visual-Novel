@@ -1,2 +1,10 @@
-name[Raccoon] Let me guess, you think I stole something too?
-name[Officer Baron] Uh... well....
+name[Raccoon] I sware officer! I didn't steal anything!
+name[Officer Baron] Sir, I just...
+name[Raccoon] PLEASE DON'T ARREST ME AGAIN. I'M CLEANN!
+name[Officer Baron] Sir, please calm down, I just...
+name[Raccoon] OK FINE! I DID IT! LET ME OFF THIS TIME!
+name[Raccoon] REWARD ME FOR GOOD BEHAVIOR OR SOMETHING!
+name[Raccoon] I CAN'T GO BACK THERE MAN!
+name[Officer Baron] We'll discuss this after I finish my investigation.
+name[Officerr Baron] Please stay in the park.
+name[Raccoon] Oh come on man! I gotta meet the wife by the can in an hour!
