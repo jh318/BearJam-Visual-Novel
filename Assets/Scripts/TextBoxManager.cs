@@ -17,7 +17,8 @@ public class TextBoxManager : MonoBehaviour {
 	public int endAtLine;
 	public bool isActive;
 	public bool stopPlayerMovement;
-
+	public float typeSpeed;
+	public string textScrollSFX;
 	//public TextAsset textfile;
 	[HideInInspector]
 	public PlayerController player;
@@ -35,7 +36,6 @@ public class TextBoxManager : MonoBehaviour {
 	bool isTyping = false;
 	bool cancelTyping = false;
 
-	public float typeSpeed;
 
 	NPCController character;
 	
@@ -178,13 +178,17 @@ public class TextBoxManager : MonoBehaviour {
 
 	public IEnumerator TextScroll(string lineOfText){
 		int letter = 0;
+		bool everyOtherLoop = true;
 		theText.text = "";
 		isTyping = true;
 		cancelTyping = false;
-		//GetName(textLines);
 		while(isTyping && !cancelTyping && (letter < lineOfText.Length - 1)){
 			theText.text += lineOfText[letter];
 			letter++;
+			everyOtherLoop = !everyOtherLoop;
+			if (!everyOtherLoop) 
+				AudioManager.PlayVariedEffect(textScrollSFX);
+
 			yield return new WaitForSeconds(typeSpeed);
 		}
 		theText.text = lineOfText;
