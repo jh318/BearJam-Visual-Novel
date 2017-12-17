@@ -1,0 +1,6 @@
+name[Fox] Yip Yip!
+name[Officer Baron] Excuse me, what? 
+name[Fox] I called you a yip! Ya yip!
+name[Officer Baron] The rabbit said you knew something about an animal polluting the park?
+name[Fox] Everyone thinks they know what the fox said! But I didn't say nothin'!
+name[Fox] I ain't not snitch like that bird!
