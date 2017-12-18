@@ -1,6 +1,8 @@
 //Credits
 
-Code/Writing - John Hawley
+Made for DMI's 48 hour Bear Game Jam in 2017.
+
+Code/Writing/Level Design - John Hawley
 Art/Code - Nolan Baker
 
 Music:
